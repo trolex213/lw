@@ -1,0 +1,238 @@
+:root {
+  --bg-color: #f7f5f2; /* Off-white / Cream background */
+  --text-color: #1a1a1a; /* Almost black for text */
+  --accent-color: #1a1a1a;
+  --link-color: #1a1a1a;
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 
+   COOL ANIMATED BACKGROUND 
+   Fluid Mesh Gradient Effect
+*/
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: #f7f5f2;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px); /* Heavy blur for mesh effect */
+  opacity: 0.5; /* Lighter opacity */
+  mix-blend-mode: multiply; /* Blends colors where they overlap */
+  will-change: transform, border-radius;
+}
+
+/* Earthy / Natural Palette */
+.blob-1 {
+  width: 60vw;
+  height: 60vw;
+  background: #daddd8; /* Light Grey/Green */
+  top: -10%;
+  left: -10%;
+}
+
+.blob-2 {
+  width: 50vw;
+  height: 50vw;
+  background: #e6b8a2; /* Muted Terra Cotta */
+  top: -10%;
+  right: -10%;
+}
+
+.blob-3 {
+  width: 45vw;
+  height: 45vw;
+  background: #a3b18a; /* Sage Green */
+  bottom: -10%;
+  left: 20%;
+}
+
+.blob-4 {
+  width: 55vw;
+  height: 55vw;
+  background: #ddb892; /* Warm Sand */
+  bottom: -10%;
+  right: -10%;
+}
+
+.blob-5 {
+  width: 40vw;
+  height: 40vw;
+  background: #b7b7a4; /* Olive */
+  top: 30%;
+  left: 40%;
+}
+
+
+/* Grain Overlay for Texture */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Header & Nav */
+header {
+  padding: 1.5rem 2rem;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* Content */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 8rem;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #1a1a1a;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.app-store-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.app-store-button:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+footer {
+  padding: 4rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #1a1a1a;
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.25rem; }
+  .blob { opacity: 0.6; } /* Slightly reduce intensity on mobile */
+}
